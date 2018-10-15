@@ -64,16 +64,7 @@ namespace SportsStore.WebUI.DependencyResolution {
             container.Inject<IProductRepository>(mock.Object);
         }
 
-        #region Constructors and Destructors
-
-        public StructureMapDependencyScope(IContainer container) {
-            if (container == null) {
-                throw new ArgumentNullException("container");
-            }
-            Container = container;
-        }
-
-        #endregion
+       
 
         #region Public Properties
 
