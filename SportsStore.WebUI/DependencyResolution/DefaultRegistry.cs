@@ -16,6 +16,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace SportsStore.WebUI.DependencyResolution {
+    using StructureMap;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
 	
