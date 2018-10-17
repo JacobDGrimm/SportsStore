@@ -47,12 +47,12 @@ namespace SportsStore.WebUI.DependencyResolution {
                 throw new ArgumentNullException("container");
             }
             Container = container;
-            AddBindings(container);
+            //AddBindings(container);
         }
 
         #endregion
 
-        private void AddBindings(IContainer container)
+       /* private void AddBindings(IContainer container)
         {
             Mock<IProductRepository> mock = new Mock<IProductRepository>();
             mock.Setup( m => m.Products ).Returns(new List<Product>
@@ -63,7 +63,7 @@ namespace SportsStore.WebUI.DependencyResolution {
             });
             container.Inject<IProductRepository>(mock.Object);
         }
-
+        */
        
 
         #region Public Properties

@@ -19,9 +19,12 @@ namespace SportsStore.WebUI.DependencyResolution {
     using StructureMap;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
+    using SportsStore.Domain.Abstract;
+    using SportsStore.Domain.Concrete;
 	
     public class DefaultRegistry : Registry {
         #region Constructors and Destructors
+        //Register Items here
 
         public DefaultRegistry() {
             Scan(
@@ -30,6 +33,7 @@ namespace SportsStore.WebUI.DependencyResolution {
                     scan.WithDefaultConventions();
 					scan.With(new ControllerConvention());
                 });
+            For<IProductRepository>().Use<EFProductRepository>();
             //For<IExample>().Use<Example>();
         }
 
