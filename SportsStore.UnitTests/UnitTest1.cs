@@ -75,11 +75,14 @@ namespace SportsStore.UnitTests
                 new Product {ProductID = 4, Name = "P4" },
                 new Product {ProductID = 5, Name = "P5" }
             });
+
             // Arrange
             ProductController controller = new ProductController(mock.Object);
             controller.PageSize = 3;
+
             // Act
-            ProductsListViewModels result = (ProductsListViewModels)controller.List(2).Model;
+            ProductsListViewModels result = (ProductsListViewModels)controller.List(null, 2).Model;
+
             // Assert
             PagingInfo pageInfo = result.PagingInfo;
             Assert.AreEqual(pageInfo.CurrentPage, 2);
