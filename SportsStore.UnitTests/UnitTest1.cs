@@ -31,8 +31,10 @@ namespace SportsStore.UnitTests
             });
             ProductController controller = new ProductController(mock.Object);
             controller.PageSize = 3;
+
             //Act
-            ProductsListViewModels result = (ProductsListViewModels)controller.List(2).Model;
+            ProductsListViewModels result = (ProductsListViewModels)controller.List(null, 2).Model;
+            
             //Assert
             Product[] prodArray = result.Products.ToArray();
             Assert.IsTrue(prodArray.Length == 2);
