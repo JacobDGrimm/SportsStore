@@ -39,5 +39,10 @@ namespace SportsStore.Domain.Entities
         {
             lineCollection.Clear();
         }
+
+        public IEnumerable<CartLine> Lines
+        {
+            get { return lineCollection; }
+        }
     }
 }
