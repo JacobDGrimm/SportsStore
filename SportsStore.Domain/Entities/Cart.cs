@@ -24,5 +24,10 @@ namespace SportsStore.Domain.Entities
                 line.Quantity += quantity;
             }
         }
+
+        public void RemoveLine(Product product)
+        {
+            lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
+        }
     }
 }
