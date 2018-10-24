@@ -34,5 +34,10 @@ namespace SportsStore.Domain.Entities
         {
             return lineCollection.Sum(e => e.Product.Price * e.Quantity);
         }
+
+        public void Clear()
+        {
+            lineCollection.Clear();
+        }
     }
 }
