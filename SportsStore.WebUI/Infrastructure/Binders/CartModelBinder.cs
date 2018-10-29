@@ -23,6 +23,7 @@ namespace SportsStore.WebUI.Infrastructure.Binders
             }
 
             // create the Cart if there wasn't one in the session data
+
             if (cart == null)
             {
                 cart = new Cart();
@@ -33,6 +34,7 @@ namespace SportsStore.WebUI.Infrastructure.Binders
             }
 
             // return the cart
+
             return cart;
         }
     }
