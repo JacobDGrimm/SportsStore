@@ -16,6 +16,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace SportsStore.UnitTests.DependencyResolution {
+    using SportsStore.Domain.Abstract;
+    using SportsStore.Domain.Concrete;
     using StructureMap;
     using StructureMap.Configuration.DSL;
     using StructureMap.Graph;
@@ -31,6 +33,8 @@ namespace SportsStore.UnitTests.DependencyResolution {
 					scan.With(new ControllerConvention());
                 });
             //For<IExample>().Use<Example>();
+            For<IProductRepository>().Use<EFProductRepository>();
+            For<IOrderProcessor>().Use<EmailOrderProcessor>();
         }
 
         #endregion
