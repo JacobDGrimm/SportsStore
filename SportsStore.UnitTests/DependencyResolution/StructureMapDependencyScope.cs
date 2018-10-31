@@ -18,11 +18,12 @@
 namespace SportsStore.UnitTests.DependencyResolution {
     using System;
     using System.Collections.Generic;
+    using System.Configuration;
     using System.Linq;
     using System.Web;
 
     using Microsoft.Practices.ServiceLocation;
-
+    using SportsStore.Domain.Concrete;
     using StructureMap;
 	
     /// <summary>
@@ -42,7 +43,15 @@ namespace SportsStore.UnitTests.DependencyResolution {
                 throw new ArgumentNullException("container");
             }
             Container = container;
+
+            EmailSettings emailSettings = new EmailSettings
+            {
+                WriteAsFile = bool.Parse(ConfigurationManager.AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+            container.Inject<EmailSettings>(emailSettings);
         }
+
+        
 
         #endregion
 
@@ -118,5 +127,7 @@ namespace SportsStore.UnitTests.DependencyResolution {
         }
 
         #endregion
+
+        
     }
 }
