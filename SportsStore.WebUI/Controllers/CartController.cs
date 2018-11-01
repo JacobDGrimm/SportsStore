@@ -15,6 +15,11 @@ namespace SportsStore.WebUI.Controllers
         private IProductRepository repository;
         private IOrderProcessor orderProcessor;
 
+        public CartController()
+        {
+
+        }
+
         public CartController(IProductRepository repo, IOrderProcessor proc)
         {
             repository = repo;
